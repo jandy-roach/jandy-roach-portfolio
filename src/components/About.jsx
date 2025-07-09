@@ -102,7 +102,7 @@ const About = () => {
               <div className="relative bg-slate-800 p-3 sm:p-4 rounded-2xl border border-slate-700 shadow-2xl">
                 <div className="aspect-[3/4] w-full overflow-hidden rounded-xl">
                   <img 
-                    src="../public/l-w-m-eimg.jpg"
+                    src="/l-w-m-eimg.jpg"
                     alt="Jandy Roach - Full Stack Developer"
                     className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                   />

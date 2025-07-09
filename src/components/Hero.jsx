@@ -75,7 +75,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-black/20 rounded-2xl blur-xl translate-y-4 group-hover:translate-y-6 transition-transform duration-500"></div>
               
               <img 
-                src="../public/recrop2.png" 
+                src="/recrop2.png" 
                 alt="Jandy Roach" 
                 className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-2xl object-cover mx-auto shadow-lg transform group-hover:scale-[1.02] transition-transform duration-500"
               />
@@ -119,7 +119,7 @@ const Hero = () => {
             }`}>
               {/* View Resume Button */}
               <motion.a
-                href="../public/will_be_updated_soon.png"
+                href="/will_be_updated_soon.png"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

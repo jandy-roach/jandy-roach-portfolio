@@ -1,6 +1,114 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Database, Globe, Terminal, GitBranch, Smartphone, Server, Shield } from 'lucide-react';
 
+// Skill logos component
+const SkillLogo = ({ skill, className = "w-4 h-4" }) => {
+  const logoMap = {
+    'HTML/CSS': (
+      <div className="flex space-x-1">
+        <div className="w-2 h-2 bg-orange-500 rounded-sm"></div>
+        <div className="w-2 h-2 bg-blue-500 rounded-sm"></div>
+      </div>
+    ),
+    'JavaScript': (
+      <div className="w-4 h-4 bg-yellow-400 rounded-sm flex items-center justify-center">
+        <span className="text-black text-xs font-bold">JS</span>
+      </div>
+    ),
+    'Python': (
+      <div className="w-4 h-4 bg-gradient-to-r from-blue-500 to-yellow-400 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">Py</span>
+      </div>
+    ),
+    'C++': (
+      <div className="w-4 h-4 bg-blue-600 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">C++</span>
+      </div>
+    ),
+    'React.js': (
+      <div className="w-4 h-4 bg-cyan-400 rounded-full flex items-center justify-center">
+        <div className="w-2 h-2 border border-cyan-800 rounded-full"></div>
+      </div>
+    ),
+    'Tailwind CSS': (
+      <div className="w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">TW</span>
+      </div>
+    ),
+    'Node.js': (
+      <div className="w-4 h-4 bg-green-600 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">N</span>
+      </div>
+    ),
+    'Express.js': (
+      <div className="w-4 h-4 bg-gray-800 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">E</span>
+      </div>
+    ),
+    'JWT Authentication': (
+      <div className="w-4 h-4 bg-purple-600 rounded-sm flex items-center justify-center">
+        <Shield className="w-2 h-2 text-white" />
+      </div>
+    ),
+    'MongoDB': (
+      <div className="w-4 h-4 bg-green-500 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">M</span>
+      </div>
+    ),
+    'MySQL': (
+      <div className="w-4 h-4 bg-blue-700 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">SQL</span>
+      </div>
+    ),
+    'Git & GitHub': (
+      <div className="w-4 h-4 bg-gray-900 rounded-sm flex items-center justify-center">
+        <GitBranch className="w-2 h-2 text-white" />
+      </div>
+    ),
+    'VS Code': (
+      <div className="w-4 h-4 bg-blue-500 rounded-sm flex items-center justify-center">
+        <Code className="w-2 h-2 text-white" />
+      </div>
+    ),
+    'Figma': (
+      <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">F</span>
+      </div>
+    ),
+    'Netlify': (
+      <div className="w-4 h-4 bg-teal-500 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">N</span>
+      </div>
+    ),
+    'vercel': (
+      <div className="w-4 h-4 bg-black rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">▲</span>
+      </div>
+    ),
+    'Render': (
+      <div className="w-4 h-4 bg-green-400 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">R</span>
+      </div>
+    ),
+    'Bruno': (
+      <div className="w-4 h-4 bg-orange-500 rounded-sm flex items-center justify-center">
+        <span className="text-white text-xs font-bold">B</span>
+      </div>
+    ),
+    'Linux': (
+      <div className="w-4 h-4 bg-yellow-500 rounded-sm flex items-center justify-center">
+        <Terminal className="w-2 h-2 text-black" />
+      </div>
+    )
+  };
+
+  return logoMap[skill] || (
+    <div className="w-4 h-4 bg-gray-500 rounded-sm flex items-center justify-center">
+      <span className="text-white text-xs font-bold">?</span>
+    </div>
+  );
+};
+
 const Skills = () => {
   const [visibleItems, setVisibleItems] = useState(new Set());
 
@@ -55,7 +163,7 @@ const Skills = () => {
       id: 'tools',
       title: 'Tools & Platforms',
       icon: <Terminal className="w-5 h-5 sm:w-6 sm:h-6" />,
-      skills: ['Git & GitHub', 'VS Code', 'Figma', 'Netlify', 'Render', 'Bruno', 'Linux'],
+      skills: ['Git & GitHub', 'VS Code', 'Figma', 'Netlify', 'vercel' , 'Render', 'Bruno', 'Linux'],
       color: 'from-indigo-500 to-purple-500'
     }
   ];
@@ -116,7 +224,7 @@ const Skills = () => {
                         transitionDelay: `${(categoryIndex * 150) + (skillIndex * 100)}ms`
                       }}
                     >
-                      <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-r ${category.color} mr-2 sm:mr-3 group-hover:scale-125 transition-transform duration-300 flex-shrink-0`}></div>
+                      <span className="mr-2 sm:mr-3 flex items-center"><SkillLogo skill={skill} /></span>
                       <span className="text-sm sm:text-base text-slate-300 font-medium font-poppins hover:text-slate-100 transition-colors duration-300 leading-relaxed">
                         {skill}
                       </span>

@@ -119,7 +119,7 @@ const Hero = () => {
             }`}>
               {/* View Resume Button */}
               <motion.a
-                href="/will_be_updated_soon.png"
+                href="/Resume_Coming_Soon_(1).pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

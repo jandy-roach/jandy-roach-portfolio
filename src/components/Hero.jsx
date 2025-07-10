@@ -16,7 +16,7 @@ const Hero = () => {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/will_be_updated_soon.png';
+    link.href = '/Resume_Coming_Soon_(1).pdf';
     link.download = 'Jandy_Roach_Resume.pdf';
     link.click();
   };

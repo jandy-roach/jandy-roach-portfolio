@@ -121,7 +121,7 @@ APIs cover team creation, messaging, file uploads, and call handling. Built with
   const handleSocialClick = (platform) => {
     const urls = {
       linkedin: 'https://www.linkedin.com/in/jandy-roach-9234a032a/',
-      instagram: 'https://instagram.com/jandy_roach_',
+      instagram: 'https://instagram.com/jandy_roach',
       github: 'https://github.com/jandy-roach' // Replace with your actual GitHub username
     };
     
